@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="dashboardHeader col-md-12">
+    <h2>Welcome To Your Dashboard, {{username}}</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class=" createNewBlog col-md-6">
+    <h3>Create a New Blog:</h3>
+    <form class="form newBlogForm">
+      <div class="form-group">
+        <input class="newBlogFormInput form-input" type="text" id="blogTitle" name="blogTitle"
+          placeholder="Blog Title" />
+      </div>
+
+      <div class="form-group">
+        <input class="newBlogFormInput form-input" id="blogDescription" name="blogDescription"
+          placeholder="Blog Content"></input>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="saveBlogBtn btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6 blogList">
+    <h3>Your Active Blogs:</h3>
+    {{#each blogs as |blog|}}
+    <div class="row mb-2">
+      <div class="activeBlogs col-md-8">
+        <h4><a class="activeBlogLink" href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <form class="form updateBlogForm" data-id="{{blog.id}}">
+          <div class="form-group">
+            <input class="blogDescriptionForm form-input" type="text" id="blogTitle{{blog.id}}" name="blogTitle"
+              placeholder="Blog Title" value="{{blog.title}}" />
+          </div>
+
+          <div class="form-group">
+            <input class="blogDescriptionForm form-input" id="blogDescription{{blog.id}}" name="blogDescription"
+              placeholder="Blog Content" value="{{blog.content}}"></input>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="updateBlogBtn btn btn-primary">Update</button> 
+          </div>
+        </form>
+        <button class="deleteBlogBtn btn btn-danger" data-id="{{blog.id}}">Delete</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<script src="/js/dashboard.js"></script>

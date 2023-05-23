@@ -1,0 +1,12 @@
+[
+	{
+		"blog_id": 1,
+		"commentDescription": "ChatGPT is starting to get insane. How far will this thing go?!",
+		"user_id": 1
+	},
+	{
+		"blog_id": 2,
+		"commentDescription": "I'm going to do the irresponsible thing and purchase the steam deck instead of paying my water bill!",
+		"user_id": 2
+	}
+]
